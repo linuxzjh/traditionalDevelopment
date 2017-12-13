@@ -96,13 +96,33 @@ void Widget::ExpandWindow(int width, int height, QWidget *target)
 
 void Widget::On_PushButton_expand_Pressed()
 {
-    ExpandWindow(100, 100, this);
+//    ExpandWindow(100, 100, this);
+    ShakeWindow();
 }
 
 void Widget::closeEvent(QCloseEvent *event)
 {
     CloseWindow();
     event->accept();
+}
+
+void Widget::ShakeWindow()
+{
+    QPropertyAnimation *pAnimation = new QPropertyAnimation(this, "pos");
+    pAnimation->setDuration(400);
+    pAnimation->setLoopCount(2);
+    pAnimation->setKeyValueAt(0, QPoint(geometry().x() - 3, geometry().y() - 3));
+    pAnimation->setKeyValueAt(0.1, QPoint(geometry().x() + 6, geometry().y() + 6));
+    pAnimation->setKeyValueAt(0.2, QPoint(geometry().x() - 6, geometry().y() + 6));
+    pAnimation->setKeyValueAt(0.3, QPoint(geometry().x() + 6, geometry().y() - 6));
+    pAnimation->setKeyValueAt(0.4, QPoint(geometry().x() - 6, geometry().y() - 6));
+    pAnimation->setKeyValueAt(0.5, QPoint(geometry().x() + 6, geometry().y() + 6));
+    pAnimation->setKeyValueAt(0.6, QPoint(geometry().x() - 6, geometry().y() + 6));
+    pAnimation->setKeyValueAt(0.7, QPoint(geometry().x() + 6, geometry().y() - 6));
+    pAnimation->setKeyValueAt(0.8, QPoint(geometry().x() - 6, geometry().y() - 6));
+    pAnimation->setKeyValueAt(0.9, QPoint(geometry().x() + 6, geometry().y() + 6));
+    pAnimation->setKeyValueAt(1, QPoint(geometry().x() - 3, geometry().y() - 3));
+    pAnimation->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
 void Widget::initUI()

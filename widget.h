@@ -22,6 +22,7 @@ public:
     void DropWindow(QWidget *target); //窗口下坠
     void CloseWindow(); //向中心闭合
     void ExpandWindow(int width, int height, QWidget *target); //窗口扩展打开
+    void ShakeWindow();
 public slots:
     void On_PushButton_expand_Pressed();
 protected:

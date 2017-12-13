@@ -1,8 +1,5 @@
 #include "widget.h"
 #include <QApplication>
-#include <QPropertyAnimation>
-#include <QParallelAnimationGroup>
-#include <QSequentialAnimationGroup>
 
 int main(int argc, char *argv[])
 {
