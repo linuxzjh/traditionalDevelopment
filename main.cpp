@@ -2,12 +2,13 @@
 #include "chart/themewidget.h"
 #include <QApplication>
 #include <QMainWindow>
+#include <QPainter>
 
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-#if 1
+#if 0
     QMainWindow window;
     ThemeWidget *widget = new ThemeWidget();
     window.setCentralWidget(widget);
@@ -15,7 +16,7 @@ int main(int argc, char *argv[])
     window.show();
 #endif
 
-#if 0
+#if 1
     Widget w;
     w.show();
 #endif

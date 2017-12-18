@@ -5,6 +5,8 @@
 #include <QPushButton>
 #include <QLayout>
 #include <QCloseEvent>
+#include <QPainterPath>
+#include <QPainter>
 
 class Widget : public QWidget
 {
@@ -27,9 +29,12 @@ public slots:
     void On_PushButton_expand_Pressed();
 protected:
     void closeEvent(QCloseEvent *event);
+    void paintEvent(QPaintEvent *event);
 private:
     QPushButton *PushButton_expand;
     void initUI();
+    void drawOutline(QPainter *painter, QPainterPath path);
+    void drawPath(QPainter *painter, QPainterPath path);
 };
 
 #endif // WIDGET_H
