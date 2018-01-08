@@ -1,5 +1,6 @@
 #include "widget.h"
 #include "chart/themewidget.h"
+#include "chart/realtimecurveqchartwidget.h"
 #include <QApplication>
 #include <QMainWindow>
 #include <QPainter>
@@ -16,10 +17,15 @@ int main(int argc, char *argv[])
     window.show();
 #endif
 
-#if 1
+#if 0
     Widget w;
     w.show();
 #endif
 
+#if 1
+    RealTimeCurveQChartWidget w;
+    w.resize(700, 600);
+    w.show();
+#endif
     return a.exec();
 }

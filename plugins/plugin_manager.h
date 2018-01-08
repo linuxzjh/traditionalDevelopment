@@ -4,7 +4,7 @@
 #include <QObject>
 
 class QPluginLoader;
-//class PluginMangerPrivate;
+class PluginMangerPrivate;
 
 class PluginManager : public QObject
 {
