@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QSplineSeries>
 #include <QScatterSeries>
-#include <QBarSeries>
+#include <QStackedBarSeries>
 #include <QBarSet>
 #include <QBarCategoryAxis>
 #include <QChart>
@@ -47,10 +47,11 @@ private:
     QBarCategoryAxis *axisX2;
     QValueAxis *axisY2;
     QChartView *chartView2;
-    QBarSeries *barSeries;
+    QStackedBarSeries *stackedBarSeries;
     QBarSet *barSet;
     int xmin, xMax;
     int controlVal;
+    QStringList m_barXlist;
 };
 
 #endif // REALTIMECURVEQCHARTWIDGET_H
