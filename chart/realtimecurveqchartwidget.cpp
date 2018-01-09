@@ -6,10 +6,11 @@
 RealTimeCurveQChartWidget::RealTimeCurveQChartWidget(QWidget *parent)
     : QWidget(parent), minX(0), maxX(300), maxY(100), controlVal(1)
 {
+    initScene();
     initChart1View();
     initChart2View();
     initLayout();
-    timerId = startTimer(1000);
+    timerId = startTimer(100);
     qsrand(QDateTime::currentDateTime().toTime_t());
 }
 
@@ -19,6 +20,14 @@ void RealTimeCurveQChartWidget::timerEvent(QTimerEvent *event)
     int newData = qrand() % (maxY + 1);
     dataReceived(newData);
     }
+}
+
+void RealTimeCurveQChartWidget::initScene()
+{
+//    scene = new QGraphicsScene(0, 0, 500, 400);
+//    scene.addItem(chart);
+//    QGraphicsView view(&scene);
+//    view.show();
 }
 
 void RealTimeCurveQChartWidget::initChart1View()

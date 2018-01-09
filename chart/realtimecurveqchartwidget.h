@@ -10,6 +10,8 @@
 #include <QChart>
 #include <QChartView>
 #include <QValueAxis>
+#include <QGraphicsScene>
+#include <QGraphicsView>
 #include <QList>
 
 using namespace QtCharts;
@@ -26,6 +28,7 @@ public slots:
 protected:
     void timerEvent(QTimerEvent *event);
 private:
+    void initScene();
     void initChart1View();
     void initChart2View();
     void initLayout();
@@ -52,6 +55,9 @@ private:
     int xmin, xMax;
     int controlVal;
     QStringList m_barXlist;
+
+    QGraphicsScene *scene;
+    QGraphicsView *view;
 };
 
 #endif // REALTIMECURVEQCHARTWIDGET_H
