@@ -4,7 +4,7 @@
 #include <QObject>
 
 class QPluginLoader;
-class PluginMangerPrivate;
+class PluginManagerPrivate;
 
 class PluginManager : public QObject
 {
@@ -22,7 +22,7 @@ private:
     ~PluginManager();
 private:
     static PluginManager *m_instance;
-    PluginMangerPrivate *d;
+    PluginManagerPrivate *d;
 signals:
 
 public slots:

@@ -4,11 +4,19 @@
 
 #include <QDir>
 #include <QApplication>
+#include <QPluginLoader>
 #include <QLibrary>
+#include <QJsonObject>
+#include <QJsonArray>
+
+PluginManager * PluginManager::m_instance = NULL;
 
 PluginManager *PluginManager::instance()
 {
-
+    if (NULL == m_instance) {
+        m_instance = new PluginManager;
+    }
+    return m_instance;
 }
 
 void PluginManager::loadAll()
@@ -40,7 +48,7 @@ void PluginManager::scan(const QString &path)
 
     //获取元数据（名称、版本、依赖）
     QPluginLoader *loader = new QPluginLoader(path);
-    //QJsonObject json = loader->metaData().value("MetaData").toObject;
+    QJsonObject json = loader->metaData().value("MetaData").toObject();
 
     d->m_names.insert(path, json.value("name").toVariant());
     d->m_versions.insert(path, json.value("version").toVariant());
@@ -101,7 +109,7 @@ QList<QPluginLoader *> PluginManager::plugins()
 PluginManager::PluginManager(QObject *parent)
     : QObject(parent)
 {
-
+    d = new PluginManagerPrivate();
 }
 
 PluginManager::~PluginManager()

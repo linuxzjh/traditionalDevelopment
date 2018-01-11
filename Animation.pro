@@ -15,13 +15,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         widget.cpp \
     chart/themewidget.cpp \
-    chart/realtimecurveqchartwidget.cpp
-#    plugins/plugin_manager.cpp \
-#    plugins/pluginmanagerprivate.cpp
+    chart/realtimecurveqchartwidget.cpp \
+    plugins/plugin_manager.cpp \
+    plugins/pluginmanagerprivate.cpp
 
 HEADERS  += widget.h \
     chart/themewidget.h \
-    chart/realtimecurveqchartwidget.h
-#    plugins/plugin.h \
-#    plugins/plugin_manager.h \
-#    plugins/pluginmanagerprivate.h
+    chart/realtimecurveqchartwidget.h \
+    plugins/plugin.h \
+    plugins/plugin_manager.h \
+    plugins/pluginmanagerprivate.h
